@@ -1,0 +1,35 @@
+.hero-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 80vh;
+  background-image: url("/images/hero-background.jpg");
+  background-size: cover;
+  background-position: center;
+  color: #ffffff;
+  text-align: center;
+  padding: 0 20px;
+
+  .hero-overlay {
+    position: absolute;
+    width: 100%;
+    height: 80vh;
+    background: rgba(0,0,0, 0.3)
+  }
+
+  .hero-content {
+    position: relative;
+    max-width: 600px;
+
+    .hero-title {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+      font-weight: 700;
+    }
+
+    .hero-subtitle {
+      font-size: 1.25rem;
+      margin-bottom: 2rem;
+    }
+  }
+}
