@@ -1,0 +1,12 @@
+.featured-paintings {
+  padding: 2rem;
+  background-color: #f9f9f9; // Color de fondo para la sección
+
+  .section-title {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+    color: var(--font-color);
+    text-align: center;
+  }
+}
