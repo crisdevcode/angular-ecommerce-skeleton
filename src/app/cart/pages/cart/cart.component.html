@@ -1,1 +1,57 @@
-<p>cart works!</p>
+<div class="container">
+  <!-- Empty Cart -->
+  <ng-container *ngIf="cartItems.length === 0">
+    <div class="flex w-full justify-content-center h-full align-items-center">
+      <div class="empty-cart-container">
+        <img src="images/empty-cart.png" alt="Empty cart" />
+        <p>Your cart is empty</p>
+      </div>
+    </div>
+  </ng-container>
+
+  <ng-container *ngIf="cartItems.length > 0">
+    <div class="grid shopping-cart">
+      <div class="col item-list">
+        <!-- Header -->
+        <div class="cart-header">
+          <p>Shopping cart</p>
+          <p>{{ itemCount }} Items</p>
+        </div>
+        <div class="divider"></div>
+
+        <!-- Cart Items -->
+        <app-cart-item
+          [cartItems]="cartItems"
+          (increaseQuantity)="increaseQuantity($event)"
+          (decreaseQuantity)="decreaseQuantity($event)"
+          (removeItem)="removeItem($event)"
+        ></app-cart-item>
+      </div>
+      <div class="col-4 summary">
+        <!-- Header -->
+        <div class="cart-header">
+          <p>Order Summary</p>
+        </div>
+        <div class="divider"></div>
+
+        <!-- Summary -->
+        <div class="flex justify-content-between mb-3 font-bold">
+          <p class="uppercase">{{ itemCount }} Items</p>
+        </div>
+
+        <!-- Total -->
+        <div class="flex justify-content-between mb-3 font-bold">
+          <p class="uppercase">Total cost</p>
+          <p>{{ getTotalPrice() | currency }}</p>
+        </div>
+
+        <!-- Checkout button -->
+        <p-button
+          label="Checkout"
+          [style]="{ width: '100%' }"
+          (onClick)="goToCheckout()"
+        />
+      </div>
+    </div>
+  </ng-container>
+</div>

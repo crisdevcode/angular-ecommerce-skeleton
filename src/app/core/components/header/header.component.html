@@ -17,7 +17,17 @@
 
   <!-- Buttons -->
   <div class="buttons">
+    <!-- Search -->
     <i class="pi pi-search"></i>
-    <i class="pi pi-shopping-cart"></i>
+
+    <!-- Shopping cart -->
+    <span class="p-overlay-badge cursor-pointer">
+      <a [routerLink]="['/cart']">
+        <i class="pi pi-shopping-cart"></i>
+        @if(cartItemCount !== 0){
+          <p-badge [value]="cartItemCount"></p-badge>
+        }
+      </a>
+    </span>
   </div>
 </header>

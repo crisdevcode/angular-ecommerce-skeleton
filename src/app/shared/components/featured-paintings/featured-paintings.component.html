@@ -30,7 +30,12 @@
               severity="secondary"
               [outlined]="true"
             />
-            <p-button icon="pi pi-shopping-cart" styleClass="ml-2" />
+            <p-button
+              icon="pi pi-shopping-cart"
+              styleClass="ml-2"
+              (onClick)="addToCart(product)"
+            />
+
           </span>
         </div>
       </div>

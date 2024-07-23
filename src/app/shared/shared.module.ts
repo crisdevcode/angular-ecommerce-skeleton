@@ -11,7 +11,7 @@ import { PrimeNgModule } from '../prime-ng/prime-ng.module';
   declarations: [
     HeroComponent,
     FeaturedPaintingsComponent,
-    FeaturedArtistsComponent
+    FeaturedArtistsComponent,
   ],
   imports: [
     CommonModule,

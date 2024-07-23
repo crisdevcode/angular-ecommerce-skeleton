@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Product } from '../../../products/models/product.model';
+import { CartService } from '../../../cart/services/cart.service';
 
 @Component({
   selector: 'app-featured-paintings',
@@ -7,7 +8,8 @@ import { Product } from '../../../products/models/product.model';
   styleUrl: './featured-paintings.component.scss',
 })
 export class FeaturedPaintingsComponent {
-  products: Product[] = [
+
+  public products: Product[] = [
     {
       id: '1',
       name: 'Abstract Dreams',
@@ -41,4 +43,12 @@ export class FeaturedPaintingsComponent {
       availability: true,
     },
   ];
+
+  constructor(
+    private cartService: CartService
+  ) {}
+
+  addToCart(product: Product, quantity: number = 1) {
+    this.cartService.addToCart(product, quantity)
+  }
 }
